@@ -11,10 +11,15 @@ public class Animation extends JFrame
     Animation()
     {
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        this.addWindowListener(new WindowListener(){        
-            @Override
-            public void windowClosing(WindowEvent arg0) {
-                JOptionPane.showConfirmDialog(null, "Do you want to close this wonderful aquarium", "Quit?", JOptionPane.YES_NO_OPTION);
+        this.addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent e)
+            {
+                int choice = JOptionPane.showConfirmDialog(null, "Quit this aquarium?", "Quit?", JOptionPane.YES_NO_OPTION);
+
+                if (choice == JOptionPane.YES_OPTION) {
+                    dispose();
+                }
             }
         });
     }
