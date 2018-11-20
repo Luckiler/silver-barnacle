@@ -36,10 +36,7 @@ abstract class AquariumItem
     public boolean intersects(Collection<AquariumItem> c)
     {
         for (AquariumItem a : c) {
-            if (this.position.x + this.width >= a.position.x &&
-                this.position.x <= a.position.x + a.width &&
-                this.position.y + this.height >= a.position.y &&
-                this.position.y <= a.position.y + a.position.height)
+            if (a.rectangle().intersects(this.rectangle()))
             {
                 return true;
             }
