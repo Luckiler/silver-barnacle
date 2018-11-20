@@ -6,7 +6,25 @@ import javax.swing.JPanel;
 
 public class Aquarium extends JPanel
 {
+    private List<AquariumItem> items = new List<AquariumItem>();
 
+    Aquarium()
+    {}
+
+    public fill(AquariumItem item)
+    {
+        this.items.add(item);
+    }
+
+    @Override
+    public void paint(Graphics g)
+    {
+        super.paint(g);
+        for(int i = 0; i < items.size(); i++)
+        {
+            items.elementAt(i).draw(g);
+        }
+    }
 }
 
 abstract class AquariumItem
@@ -59,3 +77,5 @@ class Stone extends AquariumItem
         g.fillOval(this.position.x, this.position.y, this.width, this.height);
     }
 }
+
+// TODO Create Seaweed implementing AquariumItem
