@@ -35,7 +35,16 @@ abstract class AquariumItem
 
     public boolean intersects(Collection<AquariumItem> c)
     {
-        // TODO implement this
+        for (AquariumItem a : c) {
+            if (this.position.x + this.width >= a.position.x &&
+                this.position.x <= a.position.x + a.width &&
+                this.position.y + this.height >= a.position.y &&
+                this.position.y <= a.position.y + a.position.height)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
 
