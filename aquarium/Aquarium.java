@@ -9,7 +9,7 @@ import aquarium.items.AquariumItem;
 
 public class Aquarium extends JPanel
 {
-	static int NB_STONES, NB_SEAWEED;
+	public static int NB_STONES = 10, NB_SEAWEED = 5;
 	
     private ArrayList<AquariumItem> items = new ArrayList<AquariumItem>();
 

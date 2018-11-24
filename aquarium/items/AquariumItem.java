@@ -10,11 +10,12 @@ public abstract class AquariumItem
     protected Point position;
     protected int width;
     protected int height;
-
-    AquariumItem(int width)
+    
+    public AquariumItem() {}
+    
+    public AquariumItem(int width)
     {
-        this.width = width;
-        this.height = width / 3;
+    	
     }
 
     public void setPosition(Point p)
@@ -28,9 +29,6 @@ public abstract class AquariumItem
     }
 
     public abstract void draw (Graphics g);
-    
-    abstract int getMinWidth();
-    abstract int getMax_Width();
     
     public boolean intersects(Collection<AquariumItem> c)
     {

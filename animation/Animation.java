@@ -6,13 +6,15 @@ import java.awt.event.WindowEvent;
 import javax.swing.*;
 
 public class Animation extends JFrame {
+	
+	public static final int WIDTH = 800, HEIGHT = 400;
 
 	private static final long serialVersionUID = 1L;
 	
 	public Animation(String title) {
 	setTitle(title);
 	setVisible(true); 
-	setSize(800, 400);
+	setSize(WIDTH, HEIGHT);
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setResizable(false);
 	setLocationRelativeTo(null);

@@ -6,11 +6,12 @@ import java.awt.Graphics;
 //TODO Make it look like an actual seaweed
 public class Seaweed extends AquariumItem
 {
-	static int MIN_WIDTH, MAX_WIDTH;
+	public static final int MIN_WIDTH = 1, MAX_WIDTH = 3;
 	
-	Seaweed(int width)
+	public Seaweed(int width)
 	{
-		super(width);
+		this.width = width;
+		this.height = width * 3;
 	}
 
 	@Override
@@ -18,15 +19,5 @@ public class Seaweed extends AquariumItem
 		g.setColor(Color.green);
 		g.fillOval(this.position.x, this.position.y, this.width, this.height);
 		
-	}
-
-	@Override
-	int getMinWidth() {
-		return Seaweed.MIN_WIDTH;
-	}
-
-	@Override
-	int getMax_Width() {
-		return Seaweed.MAX_WIDTH;
 	}
 }
