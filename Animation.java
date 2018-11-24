@@ -15,13 +15,9 @@ public class Animation extends JFrame {
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setResizable(false);
 	setLocationRelativeTo(null);
-	}
 	
-    Animation()
-    {
-    	
-        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-        this.addWindowListener(new WindowAdapter()
+    this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+    this.addWindowListener(new WindowAdapter()
         {
             public void windowClosing(WindowEvent e) {
                 int choice = JOptionPane.showConfirmDialog(null, "Quit this aquarium?", "Quit?", JOptionPane.YES_NO_OPTION);
