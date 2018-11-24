@@ -74,6 +74,28 @@ abstract class AquariumItemFactory<T extends AquariumItem>
 	public abstract T newItem();
 }
 
+class StoneFactory extends AquariumItemFactory<Stone>
+{
+
+	@Override
+	public Stone newItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+
+class SeaweedFactory extends AquariumItemFactory<Seaweed>
+{
+
+	@Override
+	public Seaweed newItem() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}
+
 class Stone extends AquariumItem
 {
 	static int MIN_WIDTH, MAX_WIDTH;
