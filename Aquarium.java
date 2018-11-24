@@ -1,17 +1,18 @@
-import java.awt.Color;
-import java.awt.Rectangle;
-import java.awt.Graphics;
+import java.awt.*;
+import java.util.*;
 
 import javax.swing.JPanel;
 
 public class Aquarium extends JPanel
 {
-    private List<AquariumItem> items = new List<AquariumItem>();
+    private ArrayList<AquariumItem> items = new ArrayList<AquariumItem>();
 
     Aquarium()
-    {}
+    {
 
-    public fill(AquariumItem item)
+    }
+
+    public void fill(AquariumItem item)
     {
         this.items.add(item);
     }
@@ -22,7 +23,7 @@ public class Aquarium extends JPanel
         super.paint(g);
         for(int i = 0; i < items.size(); i++)
         {
-            items.elementAt(i).draw(g);
+            items.get(i).draw(g);
         }
     }
 }
