@@ -6,7 +6,7 @@ import java.awt.Graphics;
 //TODO Make it look like an actual seaweed
 public class Seaweed extends AquariumItem
 {
-	public static final int MIN_WIDTH = 1, MAX_WIDTH = 3;
+	public static final int MIN_WIDTH = 10, MAX_WIDTH = 30;
 	
 	public Seaweed(int width)
 	{

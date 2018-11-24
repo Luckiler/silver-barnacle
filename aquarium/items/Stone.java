@@ -5,7 +5,7 @@ import java.awt.Graphics;
 
 public class Stone extends AquariumItem
 {
-	public static final int MIN_WIDTH = 1, MAX_WIDTH = 5;
+	public static final int MIN_WIDTH = 10, MAX_WIDTH = 50;
 	
     public Stone(int width)
     {
