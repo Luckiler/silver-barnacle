@@ -4,7 +4,7 @@ import animation.Animation;
 import aquarium.items.Stone;
 import random.RandomNumber;
 
-class StoneFactory extends AquariumItemFactory<Stone>
+public class StoneFactory extends AquariumItemFactory<Stone>
 {
 
 	@Override
