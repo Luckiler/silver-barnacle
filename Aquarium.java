@@ -79,4 +79,18 @@ class Stone extends AquariumItem
     }
 }
 
-// TODO Create Seaweed implementing AquariumItem
+// TODO Make it look like an actual seaweed
+class Seaweed extends AquariumItem
+{
+	Seaweed(int width)
+	{
+		super(width);
+	}
+
+	@Override
+	public void draw(Graphics g) {
+		g.setColor(Color.green);
+		g.fillOval(this.position.x, this.position.y, this.width, this.height);
+		
+	}
+}
