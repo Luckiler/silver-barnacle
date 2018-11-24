@@ -16,8 +16,13 @@ public class Aquarium extends JPanel
 	
     private ArrayList<AquariumItem> items = new ArrayList<AquariumItem>();
 
-    Aquarium()
+    public void fill(AquariumItem item)
     {
+        this.items.add(item);
+    }
+    public Aquarium()
+    {
+    	this.setBackground(Color.BLUE);
     	StoneFactory stoneFactory = new StoneFactory();
     	for (int i = 0; i < NB_STONES; i++)
     	{
@@ -29,15 +34,6 @@ public class Aquarium extends JPanel
     	{
     		this.fill(seaweedFactory.newItem());
     	}
-    }
-
-    public void fill(AquariumItem item)
-    {
-        this.items.add(item);
-    }
-    public Aquarium()
-    {
-    	this.setBackground(Color.BLUE);
     }
     @Override
     public void paint(Graphics g)
