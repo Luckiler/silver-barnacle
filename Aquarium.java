@@ -89,6 +89,16 @@ class Stone extends AquariumItem
         // Different from the "consigne" but looks better
         g.fillOval(this.position.x, this.position.y, this.width, this.height);
     }
+
+	@Override
+	int getMinWidth() {
+		return Stone.MIN_WIDTH;
+	}
+
+	@Override
+	int getMax_Width() {
+		return Stone.MAX_WIDTH;
+	}
 }
 
 // TODO Make it look like an actual seaweed
@@ -106,5 +116,15 @@ class Seaweed extends AquariumItem
 		g.setColor(Color.green);
 		g.fillOval(this.position.x, this.position.y, this.width, this.height);
 		
+	}
+
+	@Override
+	int getMinWidth() {
+		return Seaweed.MIN_WIDTH;
+	}
+
+	@Override
+	int getMax_Width() {
+		return Seaweed.MAX_WIDTH;
 	}
 }
