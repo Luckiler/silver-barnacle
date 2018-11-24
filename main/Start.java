@@ -1,4 +1,7 @@
+package main;
 import javax.swing.SwingUtilities;
+
+import animation.Animation;
 
 public class Start
 {

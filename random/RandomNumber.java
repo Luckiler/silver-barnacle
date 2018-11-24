@@ -1,4 +1,6 @@
-import java.awt.*;
+package random;
+
+import java.awt.Point;
 
 public class RandomNumber
 {
