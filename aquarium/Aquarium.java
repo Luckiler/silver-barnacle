@@ -1,8 +1,10 @@
 package aquarium;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.util.ArrayList;
 
+import javax.swing.JComponent;
 import javax.swing.JPanel;
 
 import aquarium.items.AquariumItem;
@@ -33,7 +35,10 @@ public class Aquarium extends JPanel
     {
         this.items.add(item);
     }
-
+    public Aquarium()
+    {
+    	this.setBackground(Color.BLUE);
+    }
     @Override
     public void paint(Graphics g)
     {
