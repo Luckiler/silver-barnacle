@@ -1,8 +1,11 @@
 package aquarium.items;
 
 import java.awt.Point;
+import java.util.Collection;
 
 import aquarium.Mobile;
+import random.RandomNumber;
+import aquarium.Aquarium;
 
 public abstract class MobileItem extends AquariumItem implements Mobile
 {
@@ -24,5 +27,10 @@ public abstract class MobileItem extends AquariumItem implements Mobile
 		this.position.setLocation(dx * BASE_SPEED /* * deltaTime */, dy * BASE_SPEED /* * deltaTime */);
 		
 		return false;
+	}
+	
+	public Point target(Collection<AquariumItem> neighbours)
+	{
+		return RandomNumber.randomPoint(0, Aquarium.WIDTH - this.width, 0, Aquarium.HEIGHT - this.height);
 	}
 }
