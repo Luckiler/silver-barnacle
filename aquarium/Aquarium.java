@@ -13,6 +13,8 @@ import aquarium.items.factories.*;
 public class Aquarium extends JPanel
 {
 	public static final int NB_STONES = 10, NB_SEAWEED = 5;
+	// The size of the virtual aquarium
+	public static final int WIDTH = 1000, HEIGHT = 1000;
 	
     private ArrayList<AquariumItem> items = new ArrayList<AquariumItem>();
 
