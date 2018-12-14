@@ -74,8 +74,8 @@ public class Aquarium extends JPanel
         
     }
 		
-	public void go {
-		return Time();
+	public void go() {
+		
 	}
 	
 	
