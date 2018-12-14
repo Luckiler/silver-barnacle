@@ -1,12 +1,14 @@
 package aquarium;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Point;
 import java.util.ArrayList;
-
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import aquarium.items.AquariumItem;
 import aquarium.items.Fish;
 import aquarium.items.factories.*;
@@ -24,10 +26,15 @@ public class Aquarium extends JPanel
     {
         this.items.add(item);
     }
-    public Aquarium()
-    {
-    	this.setBackground(Color.BLUE);
-    	StoneFactory stoneFactory = new StoneFactory();
+    
+    public Aquarium() {
+    	
+    	setLayout(new BorderLayout());
+        JLabel background=new JLabel(new ImageIcon("fond océan.jpg"));
+        add(background);
+        background.setLayout(new FlowLayout());
+    	
+        StoneFactory stoneFactory = new StoneFactory();
     	for (int i = 0; i < NB_STONES; i++)
     	{
     		this.fill(stoneFactory.newItem());
@@ -38,6 +45,7 @@ public class Aquarium extends JPanel
     	{
     		this.fill(seaweedFactory.newItem());
     	}
+    	
     	Fish fish1 = new Fish(new Point(10, 20), 50, 50);
     	Fish fish2 = new Fish(new Point(150, 200), 50, 50);
     	Fish fish3 = new Fish(new Point(125, 100), 50, 50);
@@ -51,7 +59,7 @@ public class Aquarium extends JPanel
     	fill(fish5)
 ;    }
     
-    @Override
+	@Override
     public void paint(Graphics g)
     {
         super.paint(g);

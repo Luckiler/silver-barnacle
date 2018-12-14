@@ -23,10 +23,7 @@ public class Animation extends JFrame {
 	setLocationRelativeTo(null);
 	JPanel Aquarium =new Aquarium();
 	add(Aquarium);
-	setLayout(new BorderLayout());
-    JLabel background=new JLabel(new ImageIcon("fond océan.jpg"));
-    add(background);
-    background.setLayout(new FlowLayout());
+
 	
     this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     this.addWindowListener(new WindowAdapter()
