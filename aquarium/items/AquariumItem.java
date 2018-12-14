@@ -10,8 +10,11 @@ public abstract class AquariumItem
     protected Point position;
     protected int width;
     protected int height;
-    
-    public AquariumItem() {}
+    UUID id;
+
+    public AquariumItem() {
+        id = new UUID.
+    }
     
     public AquariumItem(int width)
     {
