@@ -1,7 +1,6 @@
 package aquarium;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Point;
@@ -12,6 +11,7 @@ import javax.swing.JPanel;
 import aquarium.items.AquariumItem;
 import aquarium.items.Fish;
 import aquarium.items.factories.*;
+import time.Time;;
 
 public class Aquarium extends JPanel
 {
@@ -21,6 +21,8 @@ public class Aquarium extends JPanel
 	public static final int WIDTH = 1000, HEIGHT = 1000;
 	
     private ArrayList<AquariumItem> items = new ArrayList<AquariumItem>();
+    
+    private Time time;
 
     public void fill(AquariumItem item)
     {
@@ -28,6 +30,8 @@ public class Aquarium extends JPanel
     }
     
     public Aquarium() {
+    	
+    	time = new Time(this);
     	
     	setLayout(new BorderLayout());
         JLabel background=new JLabel(new ImageIcon("fond océan.jpg"));
@@ -69,5 +73,14 @@ public class Aquarium extends JPanel
         }
         
     }
+		
+	public void go {
+		return Time();
+	}
+	
+	
+	
+
+	
 }
     
