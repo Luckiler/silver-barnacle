@@ -18,4 +18,9 @@ public class Stone extends AquariumItem
         g.setColor(Color.gray);
         g.fillOval(this.position.x, this.position.y, this.width, this.height);
     }
+    
+    public static void Image() {
+		private static URL = ClassLoader.getSystemResource("/image/rock.jpg"); // à condition
+	}
+
 }

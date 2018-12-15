@@ -34,7 +34,5 @@ public abstract class MobileItem extends AquariumItem implements Mobile
 		return RandomNumber.randomPoint(0, Aquarium.WIDTH - this.width, 0, Aquarium.HEIGHT - this.height);
 	}
 	
-	public static void Image() {
-		
-	}
+	
 }
