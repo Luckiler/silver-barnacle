@@ -4,14 +4,18 @@ import java.awt.Graphics;
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.Collection;
+import java.util.UUID;
 
 public abstract class AquariumItem
 {
-    protected Point position;
+    public Point position;
     protected int width;
     protected int height;
-    
-    public AquariumItem() {}
+    public UUID id;
+
+    public AquariumItem() {
+        id = UUID.randomUUID();
+    }
     
     public AquariumItem(int width)
     {
@@ -39,5 +43,10 @@ public abstract class AquariumItem
             }
         }
         return false;
+    }
+
+    public void update(ItemUpdateInfo updateInfo)
+    {
+        this.position = updateInfo.newPosition;
     }
 }
