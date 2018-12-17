@@ -3,9 +3,10 @@ package aquarium.server;
 import aquarium.items.*;
 
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.ArrayList;
+import java.util.*;
 
 public class AquariumServer {
     private ServerSocket serverSocket;
@@ -24,6 +25,7 @@ public class AquariumServer {
                 try
                 {
                     socket = serverSocket.accept();
+                    new Thread(new Broadcast(socket)).start();
                 }
                 catch (IOException e)
                 {
@@ -44,15 +46,35 @@ public class AquariumServer {
     class Broadcast implements Runnable
     {
         Socket socket;
+        ObjectOutputStream outputStream;
 
-        Broadcast(Socket socket)
+        public Broadcast(Socket socket) throws IOException
         {
             this.socket = socket;
+            outputStream = new ObjectOutputStream(socket.getOutputStream());
         }
 
         @Override
         public void run() {
-
+            while(true) {
+                LinkedHashMap<UUID, ItemUpdateInfo> itemUpdateInfos = new LinkedHashMap<>();
+                for (AquariumItem item : items) {
+                    ItemUpdateInfo itemUpdateInfo = new ItemUpdateInfo(item.position, item.id);
+                    itemUpdateInfos.put(itemUpdateInfo.uuid, itemUpdateInfo);
+                }
+                try {
+                    outputStream.writeObject(itemUpdateInfos);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                    break;
+                }
+                try {
+                    Thread.sleep(1000 / 30);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                    break;
+                }
+            }
         }
     }
 }
