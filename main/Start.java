@@ -11,10 +11,10 @@ public class Start
 {
     public static void main(String[] args) {
     	SwingUtilities.invokeLater(() -> {
-    	    if (Objects.equals(args[0], "-c")) {
+    	    if (args.length > 0 && Objects.equals(args[0], "-c")) {
                 new Animation("Aquarium");
             }
-    	    else if (Objects.equals(args[0], "-s")) {
+    	    else if (args.length > 0 && Objects.equals(args[0], "-s")) {
     	        int port;
     	        try {
                     port = Integer.parseInt(args[1]);

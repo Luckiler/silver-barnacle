@@ -12,28 +12,29 @@ public abstract class MobileItem extends AquariumItem implements Mobile
 {
 	// Base speed in unit per second
 	static final int BASE_SPEED = 10;
+	public boolean hasTarget = false;
+	private Point target;
 	
-	public boolean move(Point destination)
+	public void move()
 	{
-		double d = this.position.distance(destination);
+		double d = this.position.distance(target);
 		// If we're close enough to the destination just snap there
 		if (d < BASE_SPEED * Time.deltaTime)
 		{
-			this.position.setLocation(destination);
-			return true;
+			this.position.setLocation(target);
+			this.hasTarget = false;
 		}
 
-		double dx = (destination.x - this.position.x) / d;
-		double dy = (destination.y - this.position.y) / d;
+		double dx = (target.x - this.position.x) / d;
+		double dy = (target.y - this.position.y) / d;
 		
 		this.position.setLocation(dx * BASE_SPEED  * Time.deltaTime, dy * BASE_SPEED * Time.deltaTime);
-		
-		return false;
 	}
 	
-	public Point target(Collection<AquariumItem> neighbours)
+	public void generateTarget(Collection<AquariumItem> neighbours)
 	{
-		return RandomNumber.randomPoint(0, Aquarium.WIDTH - this.width, 0, Aquarium.HEIGHT - this.height);
+		this.target = RandomNumber.randomPoint(0, Aquarium.WIDTH - this.width, 0, Aquarium.HEIGHT - this.height);
+		this.hasTarget = true;
 	}
 	
 	

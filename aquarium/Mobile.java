@@ -7,5 +7,5 @@ import aquarium.items.AquariumItem;
 
 public interface Mobile {
 	public boolean move(Point destination);
-	Point target(Collection<AquariumItem> neighbours);
+	void generateTarget(Collection<AquariumItem> neighbours);
 }

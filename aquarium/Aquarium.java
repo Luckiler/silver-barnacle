@@ -16,6 +16,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import aquarium.items.MobileItem;
 import time.Time;
 
 import aquarium.items.AquariumItem;
@@ -112,7 +113,14 @@ public class Aquarium extends JPanel
     }
 
     public void simulate() {
+        for (Map.Entry<UUID, AquariumItem> aquariumItemEntry : this.items.entrySet())
+        {
+            AquariumItem item = aquariumItemEntry.getValue();
+            if ()
+            {
 
+            }
+        }
     }
 
     public void connect(String host, int port) throws IOException
