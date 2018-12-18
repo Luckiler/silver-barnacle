@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 import java.util.Collection;
 
 public abstract class AquariumItem
@@ -11,9 +12,10 @@ public abstract class AquariumItem
     protected Point position;
     protected int width;
     protected int height;
-    protected Image image;
+    protected BufferedImage image;
     
-    public AquariumItem() {}
+    public AquariumItem() {
+    }
     
     public AquariumItem(int width, Image image) {
     }
@@ -22,8 +24,7 @@ public abstract class AquariumItem
 		this.height = height;
 	}
     
-    public void setPosition(Point p)
-    {
+    public void setPosition(Point p){
         this.position = p;
     }
 
@@ -33,6 +34,7 @@ public abstract class AquariumItem
     }
 
     public abstract void draw (Graphics g);
+    	
     
     public boolean intersects(Collection<AquariumItem> c)
     {
