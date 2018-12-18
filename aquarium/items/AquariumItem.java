@@ -1,8 +1,10 @@
 package aquarium.items;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
 import java.util.Collection;
 import java.util.UUID;
 
@@ -16,14 +18,18 @@ public abstract class AquariumItem
     public AquariumItem() {
         id = UUID.randomUUID();
     }
+    protected BufferedImage image;
     
     public AquariumItem(int width)
     {
     	
     }
 
-    public void setPosition(Point p)
-    {
+	public void setHeight(int height) {
+		this.height = height;
+	}
+    
+    public void setPosition(Point p){
         this.position = p;
     }
 
@@ -33,6 +39,7 @@ public abstract class AquariumItem
     }
 
     public abstract void draw (Graphics g);
+    	
     
     public boolean intersects(Collection<AquariumItem> c)
     {

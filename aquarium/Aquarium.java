@@ -1,19 +1,17 @@
 package aquarium;
 
-import java.awt.Color;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Point;
-import java.io.IOException;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-import java.util.*;
-
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import aquarium.items.AquariumItem;
 import aquarium.items.ItemUpdateInfo;
 import aquarium.items.factories.*;
+import time.Time;;
 
 public class Aquarium extends JPanel
 {
@@ -25,6 +23,7 @@ public class Aquarium extends JPanel
     private HashMap<UUID, AquariumItem> items = new LinkedHashMap<>();
     private boolean standalone;
     private Socket socket;
+    private Time time;
 
     public void fill(AquariumItem item)
     {
@@ -35,7 +34,6 @@ public class Aquarium extends JPanel
     {
         this.standalone = true;
 
-        this.setBackground(Color.BLUE);
         int i;
         StoneFactory stoneFactory = new StoneFactory();
         for (i = 0; i < NB_STONES; i++) {
@@ -60,6 +58,10 @@ public class Aquarium extends JPanel
     }
 
     @Override
+    	setLayout(new BorderLayout());
+        JLabel background=new JLabel(new ImageIcon("fond océan.jpg"));
+        add(background);
+        background.setLayout(new FlowLayout());
     public void paint(Graphics g)
     {
         super.paint(g);

@@ -1,6 +1,8 @@
 package animation;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
@@ -19,10 +21,9 @@ public class Animation extends JFrame {
 	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	setResizable(false);
 	setLocationRelativeTo(null);
-	getContentPane().setBackground(Color.BLUE);
-	
 	JPanel Aquarium =new Aquarium();
 	add(Aquarium);
+
 	
     this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
     this.addWindowListener(new WindowAdapter()
