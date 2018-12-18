@@ -6,6 +6,7 @@ import java.util.Collection;
 import aquarium.Mobile;
 import random.RandomNumber;
 import aquarium.Aquarium;
+import time.Time;
 
 public abstract class MobileItem extends AquariumItem implements Mobile
 {
@@ -16,15 +17,16 @@ public abstract class MobileItem extends AquariumItem implements Mobile
 	{
 		double d = this.position.distance(destination);
 		// If we're close enough to the destination just snap there
-		if (d < BASE_SPEED /* * deltaTime */)
+		if (d < BASE_SPEED * Time.deltaTime)
 		{
 			this.position.setLocation(destination);
 			return true;
 		}
+
 		double dx = (destination.x - this.position.x) / d;
 		double dy = (destination.y - this.position.y) / d;
 		
-		this.position.setLocation(dx * BASE_SPEED /* * deltaTime */, dy * BASE_SPEED /* * deltaTime */);
+		this.position.setLocation(dx * BASE_SPEED  * Time.deltaTime, dy * BASE_SPEED * Time.deltaTime);
 		
 		return false;
 	}

@@ -20,9 +20,9 @@ public class Fish extends MobileItem {
 		this.height = height;
 		if (image == null) {
 			try {
-			image = ImageIO.read(new File("Poisson.png"));
+				image = ImageIO.read(new File("Poisson.png"));
 			} catch (IOException e) {
-			e.printStackTrace();
+				e.printStackTrace();
 			}
 		}
 	}

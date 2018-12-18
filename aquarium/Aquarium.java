@@ -4,22 +4,29 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.Point;
-import java.util.ArrayList;
+
+import java.io.IOException;
+
+import java.net.InetSocketAddress;
+import java.net.Socket;
+
+import java.util.*;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import time.Time;
+
 import aquarium.items.AquariumItem;
 import aquarium.items.ItemUpdateInfo;
 import aquarium.items.factories.*;
-import time.Time;;
 
 public class Aquarium extends JPanel
 {
     private static final long serialVersionUID = 1L;
     public static final int NB_STONES = 10, NB_SEAWEED = 5, NB_FISH = 10;
-    // The size of the virtual aquarium
     public static final int WIDTH = 1000, HEIGHT = 1000;
-    // private ArrayList<AquariumItem> items = new ArrayList<AquariumItem>();
     private HashMap<UUID, AquariumItem> items = new LinkedHashMap<>();
     private boolean standalone;
     private Socket socket;
@@ -33,6 +40,11 @@ public class Aquarium extends JPanel
     public Aquarium()
     {
         this.standalone = true;
+
+        setLayout(new BorderLayout());
+        JLabel background=new JLabel(new ImageIcon("fond océan.jpg"));
+        add(background);
+        background.setLayout(new FlowLayout());
 
         int i;
         StoneFactory stoneFactory = new StoneFactory();
@@ -58,10 +70,6 @@ public class Aquarium extends JPanel
     }
 
     @Override
-    	setLayout(new BorderLayout());
-        JLabel background=new JLabel(new ImageIcon("fond océan.jpg"));
-        add(background);
-        background.setLayout(new FlowLayout());
     public void paint(Graphics g)
     {
         super.paint(g);
@@ -101,6 +109,10 @@ public class Aquarium extends JPanel
                 }
             }
         }
+    }
+
+    public void simulate() {
+
     }
 
     public void connect(String host, int port) throws IOException

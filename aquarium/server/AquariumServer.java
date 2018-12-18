@@ -14,7 +14,7 @@ public class AquariumServer {
     private Thread main;
     public boolean isServerRunning = false;
 
-    AquariumServer(int port) throws IOException
+    public AquariumServer(int port) throws IOException
     {
         serverSocket = new ServerSocket(port);
         items = new ArrayList<AquariumItem>();
