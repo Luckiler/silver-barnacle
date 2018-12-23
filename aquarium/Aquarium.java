@@ -115,7 +115,7 @@ public class Aquarium extends JPanel
     public void simulate() {
         for (Map.Entry<UUID, AquariumItem> aquariumItemEntry : this.items.entrySet())
         {
-<<<<<<< Updated upstream
+/*<<<<<<< Updated upstream*/
             try {
                 MobileItem mobileItem = (MobileItem) aquariumItemEntry.getValue();
                 if (mobileItem.hasTarget) {
@@ -127,7 +127,7 @@ public class Aquarium extends JPanel
             } catch (ClassCastException e) {
 
             }
-=======
+/*=======*/
             AquariumItem item = aquariumItemEntry.getValue();
             if ()
             
