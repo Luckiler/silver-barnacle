@@ -3,7 +3,6 @@ package aquarium;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Graphics;
-import java.awt.Point;
 
 import java.io.IOException;
 
@@ -43,7 +42,7 @@ public class Aquarium extends JPanel
         this.standalone = true;
 
         setLayout(new BorderLayout());
-        JLabel background=new JLabel(new ImageIcon("fond océan.jpg"));
+        JLabel background=new JLabel(new ImageIcon("fond ocean.jpg"));
         add(background);
         background.setLayout(new FlowLayout());
 
@@ -115,9 +114,15 @@ public class Aquarium extends JPanel
     public void simulate() {
         for (Map.Entry<UUID, AquariumItem> aquariumItemEntry : this.items.entrySet())
         {
-            AquariumItem item = aquariumItemEntry.getValue();
-            if ()
-            {
+            try {
+                MobileItem mobileItem = (MobileItem) aquariumItemEntry.getValue();
+                if (mobileItem.hasTarget) {
+                    mobileItem.move();
+                } else {
+                    mobileItem.generateTarget();
+                    mobileItem.move();
+                }
+            } catch (ClassCastException e) {
 
             }
         }

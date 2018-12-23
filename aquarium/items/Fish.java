@@ -2,6 +2,7 @@ package aquarium.items;
 
 import java.awt.Graphics;
 import java.awt.Point;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -11,10 +12,9 @@ import javax.imageio.ImageIO;
 public class Fish extends MobileItem {
 	@Override
 	public void draw(Graphics g) {
-	g.drawImage(image, position.x, position.y, width, height, null);
-			
-}
-	public Fish(Point point, int width, int height){
+		g.drawImage(image, (int)position.x, (int)position.y, width, height, null);
+	}
+	public Fish(Point2D.Double point, int width, int height){
 		this.position = point;
 		this.width = width;
 		this.height = height;

@@ -1,16 +1,15 @@
 package aquarium.items;
 
 import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.Point;
 import java.awt.Rectangle;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.util.Collection;
 import java.util.UUID;
 
 public abstract class AquariumItem
 {
-    public Point position;
+    public Point2D.Double position;
     protected int width;
     protected int height;
     public UUID id;
@@ -29,13 +28,13 @@ public abstract class AquariumItem
 		this.height = height;
 	}
     
-    public void setPosition(Point p){
+    public void setPosition(Point2D.Double p){
         this.position = p;
     }
 
     public Rectangle rectangle()
     {
-        return new Rectangle(this.position.x, this.position.y, this.width, this.height);
+        return new Rectangle((int)this.position.x, (int)this.position.y, this.width, this.height);
     }
 
     public abstract void draw (Graphics g);

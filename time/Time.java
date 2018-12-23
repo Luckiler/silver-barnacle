@@ -5,8 +5,9 @@ import aquarium.Aquarium;
 public class Time extends Thread {
 	
 	private Aquarium aquarium;
-	public static long deltaTime;
+	public static double deltaTime;
 	private long lastTime;
+	public boolean running = true;
 	
 	public Time(Aquarium aquarium) {
 		this.aquarium = aquarium;
@@ -14,14 +15,12 @@ public class Time extends Thread {
 	}
 	
 	public void run() {
-		this.deltaTime = this.lastTime - System.nanoTime();
-		this.lastTime = System.nanoTime();
+		while(running) {
+			Time.deltaTime = (System.nanoTime() - this.lastTime) / 1000000000f;
+			this.lastTime = System.nanoTime();
 
-		aquarium.simulate();
-		try {
-			Thread.sleep(1000/60);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+			aquarium.simulate();
+			aquarium.repaint();
 		}
 	}
 }

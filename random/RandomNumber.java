@@ -1,6 +1,7 @@
 package random;
 
 import java.awt.Point;
+import java.awt.geom.Point2D;
 
 public class RandomNumber
 {
@@ -9,8 +10,8 @@ public class RandomNumber
 		return (int)(Math.random() * (max - min + 1)) + min;
 	}
 	
-	public static Point randomPoint(int min_x, int max_x, int min_y, int max_y)
+	public static Point2D.Double randomPoint(int min_x, int max_x, int min_y, int max_y)
 	{
-		return new Point(randomValue(min_x, max_x), randomValue(min_y, max_y));
+		return new Point2D.Double(randomValue(min_x, max_x), randomValue(min_y, max_y));
 	} 
 }

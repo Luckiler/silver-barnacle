@@ -26,7 +26,7 @@ public class Stone extends AquariumItem
 
     @Override
     public void draw(Graphics g) {
-    	g.drawImage(image, position.x, position.y, width, height, null);
+    	g.drawImage(image, (int)position.x, (int)position.y, width, height, null);
         
     }
 }
