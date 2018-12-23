@@ -36,6 +36,11 @@ public abstract class MobileItem extends AquariumItem implements Mobile
 		this.target = RandomNumber.randomPoint(0, Aquarium.WIDTH - this.width, 0, Aquarium.HEIGHT - this.height);
 		this.hasTarget = true;
 	}
+
+	public boolean move(Point destination) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 	
 	
 }

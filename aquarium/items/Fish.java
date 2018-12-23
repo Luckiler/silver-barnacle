@@ -26,4 +26,8 @@ public class Fish extends MobileItem {
 			}
 		}
 	}
+	@Override
+	public boolean move(Point destination) {
+		return false;
+	}
 }

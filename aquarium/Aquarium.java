@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import aquarium.items.MobileItem;
 import time.Time;
 
+import aquarium.items.*;
 import aquarium.items.AquariumItem;
 import aquarium.items.ItemUpdateInfo;
 import aquarium.items.factories.*;
@@ -114,6 +115,7 @@ public class Aquarium extends JPanel
     public void simulate() {
         for (Map.Entry<UUID, AquariumItem> aquariumItemEntry : this.items.entrySet())
         {
+<<<<<<< Updated upstream
             try {
                 MobileItem mobileItem = (MobileItem) aquariumItemEntry.getValue();
                 if (mobileItem.hasTarget) {
@@ -125,6 +127,11 @@ public class Aquarium extends JPanel
             } catch (ClassCastException e) {
 
             }
+=======
+            AquariumItem item = aquariumItemEntry.getValue();
+            if ()
+            
+>>>>>>> Stashed changes
         }
     }
 
